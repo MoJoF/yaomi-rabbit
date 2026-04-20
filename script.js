@@ -18,23 +18,23 @@ const changeTrack = (track) => {
     if (!audio.src) {
         audio.src = link
         audio.play()
-    } 
+    }
     // Если что-то уже проигрывалось
     else {
         // Поставить на паузу (снять с паузы), если 
         // ссылка на трек такая же, как и у текущего трека
         if (audio.src === link) {
             console.log(audio.paused)
-            if (audio.paused) { 
+            if (audio.paused) {
                 audio.play()
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pauseSvg
             }
-            else { 
-                audio.pause() 
+            else {
+                audio.pause()
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playSvg
             }
         } else {
-            audio.pause() 
+            audio.pause()
             audio.currentTime = 0
             audio.src = link
             audio.play()
@@ -62,16 +62,16 @@ const renderTracks = (tracks) => {
         </button>`
 
         audioEl.innerHTML += `
-      <div class="texts">
-        <span class="music-title">${track.title}</span>
-        <small class="music-author">${track.artist + (track.featured_artist !== null ? " & " + track.featured_artist : "")}</small>
-      </div>
+        <div class="texts">
+            <span class="music-title">${track.title}</span>
+            <small class="music-author">${track.artist + (track.featured_artist !== null ? " & " + track.featured_artist : "")}</small>
+        </div>
     `
 
-        audioEl.innerHTML += `<div class="right-cont">`
-
         if (track.cover_url.includes('https')) {
-            audioEl.innerHTML += `<img src="${track.cover_url}" class="music-cover">`
+            audioEl.innerHTML += `<div class="right-cont"><img src="${track.cover_url}" class="music-cover">`
+        } else {
+            audioEl.innerHTML += `<div class="right-cont">`
         }
 
         audioEl.innerHTML += `<a class="detail-link" href="/music?track=${track.slug}">More</a></div>`
