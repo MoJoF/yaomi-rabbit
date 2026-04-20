@@ -53,6 +53,7 @@ main {
     background: #705987;
     justify-content: space-between;
     border-radius: 10px;
+    width: 550px;
 }
 
 button.play-btn {

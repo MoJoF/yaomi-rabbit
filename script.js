@@ -3,18 +3,46 @@ const audio = new Audio(null)
 const playSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/play.svg"
 const pauseSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/pause.svg"
 
+let tracksArr = []
+
 const select = (s, m = false) => m ? document.querySelectorAll(s) : document.querySelector(s)
 
+const changeTrack = (track) => {
+    select('.play-btn > img', true).forEach(pic => pic.src = playSvg)
+    const trackTitle = track
+    const audioObj = tracksArr.find(t => t.title === trackTitle)
+    const link = audioObj.audio_url
+    if (!audio.src) {
+        audio.src = link
+        audio.play()
+    } else {
+        audio.pause()
+        audio.currentTime = 0
+        audio.src = link
+        audio.play()
+    }
+    select('.music-item', true).forEach(musicItem => {
+        if (musicItem.getAttribute("data-music-title") === track) {
+            musicItem.querySelector('.play-btn > img').src = pauseSvg
+        }
+    })
+
+    
+}
+
 const renderTracks = (tracks) => {
+    tracksArr = tracks
+
     const songsCont = select('#songs')
     songsCont.innerHTML = ''
     tracks.forEach(track => {
         const audioEl = document.createElement('div')
         audioEl.classList = "music-item"
+        audioEl.setAttribute('data-music-title', track.title)
 
-        audioEl.innerHTML += `<button class="play-btn">
-      <img src="${playSvg}" />
-    </button>`
+        audioEl.innerHTML += `<button class="play-btn" onclick="changeTrack('${track.title}')">
+            <img src="${playSvg}" />
+        </button>`
 
         audioEl.innerHTML += `
       <div class="texts">
