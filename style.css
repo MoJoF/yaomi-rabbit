@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* HTML: <div class="loader"></div> */
 .loader {
@@ -30,7 +31,7 @@ body {
     background: #514261;
 }
 
-header > a {
+header>a {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -40,7 +41,8 @@ main {
     margin: 20px 0;
 }
 
-#songs, #song {
+#songs,
+#song {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -115,12 +117,22 @@ a.detail-link {
     gap: 10px;
 }
 
-footer > span {
+footer>span {
     color: rgb(163, 133, 194);
 }
 
-@media (width <= 400px) {
-    body { padding: 10px; }
+input.range {
+    width: 50%;
+}
+
+p.text {
+    font-family: Montserrat;
+}
+
+@media (width <=410px) {
+    body {
+        padding: 10px;
+    }
 
     .music-item {
         padding: 5px 10px;
@@ -129,14 +141,24 @@ footer > span {
         gap: 0;
     }
 
-    button.play-btn > img {
+    button.play-btn>img {
         width: 40px;
         height: 40px;
     }
 
-    .music-title { font-size: 20px; }
+    .music-title {
+        font-size: 20px;
+    }
 
-    .music-author { font-size: 16px; }
+    .music-author {
+        font-size: 16px;
+    }
 
-    img.music-cover { display: none; }
+    img.music-cover {
+        display: none;
+    }
+
+    input.range {
+        width: 70%;
+    }
 }
