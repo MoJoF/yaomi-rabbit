@@ -22,6 +22,7 @@
     padding: 0;
     color: snow;
     font-family: "Agbalumo";
+    box-sizing: border-box;
 }
 
 body {
@@ -53,7 +54,7 @@ main {
     background: #705987;
     justify-content: space-between;
     border-radius: 10px;
-    width: 580px;
+    max-width: 580px;
 }
 
 button.play-btn {
@@ -103,36 +104,23 @@ a.detail-link {
 }
 
 @media (width <= 400px) {
-    body {
-        padding: 10px;
-    }
+    body { padding: 10px; }
 
     .music-item {
-        gap: 5px;
         padding: 5px;
         border-radius: 10px;
         width: 100%;
+        gap: 0;
     }
 
-    button.play-btn>img {
+    button.play-btn > img {
         width: 40px;
         height: 40px;
     }
 
-    .music-title {
-        font-size: 20px;
-    }
+    .music-title { font-size: 20px; }
 
-    .music-author {
-        font-size: 16px;
-    }
+    .music-author { font-size: 16px; }
 
-    .right-cont {
-        gap: 5px;
-    }
-
-    img.music-cover {
-        width: 50px;
-        height: 50px;
-    }
+    img.music-cover { display: none; }
 }
