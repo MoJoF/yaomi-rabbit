@@ -74,7 +74,7 @@ const renderTracks = (tracks) => {
             audioEl.innerHTML += `<div class="right-cont">`
         }
 
-        audioEl.innerHTML += `<a class="detail-link" href="/music?track=${track.slug}">More</a></div>`
+        audioEl.innerHTML += `<a class="detail-link" href="/music/index.html?track=${track.slug}">More</a></div>`
 
         songsCont.appendChild(audioEl)
     })
