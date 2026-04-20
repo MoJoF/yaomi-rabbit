@@ -8,26 +8,43 @@ let tracksArr = []
 const select = (s, m = false) => m ? document.querySelectorAll(s) : document.querySelector(s)
 
 const changeTrack = (track) => {
+    // Везде ставим иконки play
     select('.play-btn > img', true).forEach(pic => pic.src = playSvg)
-    const trackTitle = track
-    const audioObj = tracksArr.find(t => t.title === trackTitle)
+    const audioObj = tracksArr.find(t => t.title === track)
     const link = audioObj.audio_url
+    const title = audioObj.title
+
+    // Если до этого ничего не проигрывалось
     if (!audio.src) {
         audio.src = link
         audio.play()
-    } else {
-        audio.pause()
-        audio.currentTime = 0
-        audio.src = link
-        audio.play()
+    } 
+    // Если что-то уже проигрывалось
+    else {
+        // Поставить на паузу (снять с паузы), если 
+        // ссылка на трек такая же, как и у текущего трека
+        if (audio.src === link) {
+            console.log(audio.paused)
+            if (audio.paused) { 
+                audio.play()
+                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pauseSvg
+            }
+            else { 
+                audio.pause() 
+                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playSvg
+            }
+        } else {
+            audio.pause() 
+            audio.currentTime = 0
+            audio.src = link
+            audio.play()
+        }
     }
     select('.music-item', true).forEach(musicItem => {
         if (musicItem.getAttribute("data-music-title") === track) {
             musicItem.querySelector('.play-btn > img').src = pauseSvg
         }
     })
-
-    
 }
 
 const renderTracks = (tracks) => {
@@ -57,7 +74,7 @@ const renderTracks = (tracks) => {
             audioEl.innerHTML += `<img src="${track.cover_url}" class="music-cover">`
         }
 
-        audioEl.innerHTML += `<a class="detail-link" href="/music?track=${track.slug}">Подробно</a></div>`
+        audioEl.innerHTML += `<a class="detail-link" href="/music?track=${track.slug}">More</a></div>`
 
         songsCont.appendChild(audioEl)
     })
@@ -69,4 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (data.status === "success") { renderTracks(data.tracks) }
         else { throw new Error(data.message) }
     })
+
+    audio.onended = () => {
+        select('.play-btn > img', true).forEach(pic => pic.src = playSvg)
+    }
 })
