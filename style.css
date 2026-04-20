@@ -107,7 +107,7 @@ a.detail-link {
     body { padding: 10px; }
 
     .music-item {
-        padding: 5px;
+        padding: 5px 10px;
         border-radius: 10px;
         width: 100%;
         gap: 0;
