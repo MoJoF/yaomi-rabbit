@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 120px;
+    height: 20px;
+    background:
+        linear-gradient(#a385c2 0 0) left -40px top 0/40px 20px,
+        linear-gradient(#ddd 0 0) center/100% 50%;
+    background-repeat: no-repeat;
+    animation: l5 1s infinite linear;
+}
+
+@keyframes l5 {
+    100% {
+        background-position: right -40px top 0, center
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: snow;
+    font-family: "Agbalumo";
+}
+
+body {
+    padding: 10px 17.7vw;
+    background: #514261;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main {
+    margin: 20px 0;
+}
+
+#songs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.music-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+    background: #705987;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+button.play-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+button.play-btn>img {
+    width: 80px;
+    height: 80px;
+}
+
+img.music-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+a.detail-link {
+    font-family: "Agbalumo";
+    color: rgb(163, 133, 194);
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.music-title {
+    font-size: 32px;
+    color: rgb(163, 133, 194);
+}
+
+.music-author {
+    color: rgba(163, 133, 194, .75);
+    font-size: 20px;
+}
+
+.right-cont {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
