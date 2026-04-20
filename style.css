@@ -30,7 +30,7 @@ body {
     background: #514261;
 }
 
-header {
+header > a {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -40,7 +40,7 @@ main {
     margin: 20px 0;
 }
 
-#songs {
+#songs, #song {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -76,6 +76,13 @@ img.music-cover {
     border-radius: 10px;
 }
 
+img.song-cover {
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
 a.detail-link {
     font-family: "Agbalumo";
     color: rgb(163, 133, 194);
@@ -101,6 +108,15 @@ a.detail-link {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+footer > span {
+    color: rgb(163, 133, 194);
 }
 
 @media (width <= 400px) {

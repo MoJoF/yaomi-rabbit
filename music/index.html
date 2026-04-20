@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/logo.svg"
+        type="image/svg+xml">
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
     <header>
-        <img src="https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/logo.svg" width="40" alt="">
-        <span>Yaomi Rabbit</span>
+        <a href="/">
+            <img src="https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/logo.svg" width="40" alt="">
+            <span>Yaomi Rabbit</span>
+        </a>
     </header>
 
     <main>
-        
+        <div id="song">
+            <img src="" class="song-cover" alt="" style="display: none;">
+            <div class="texts">
+                <span class="music-title"></span>
+                <span class="music-author"></span>
+            </div>
+
+            <div class="controls">
+                <button class="play-btn">
+                    <img src="https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/play.svg" alt="">
+                </button>
+                <input type="range">
+            </div>
+
+            <p class="text"></p>
+        </div>
     </main>
 
     <footer>
@@ -23,4 +43,5 @@
 
     <script src="music.js"></script>
 </body>
+
 </html>
