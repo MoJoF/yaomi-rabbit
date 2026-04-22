@@ -18,6 +18,11 @@ const changeTrack = (track) => {
     if (!audio.src) {
         audio.src = link
         audio.play()
+        select('.music-item', true).forEach(musicItem => {
+            if (musicItem.getAttribute("data-music-title") === track) {
+                musicItem.querySelector('.play-btn > img').src = pausePng
+            }
+        })
     }
     // Если что-то уже проигрывалось
     else {
@@ -27,10 +32,12 @@ const changeTrack = (track) => {
             if (audio.paused) {
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pausePng
                 audio.play()
+                return
             }
             else {
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playPng
                 audio.pause()
+                return
             }
         } else {
             audio.pause()
