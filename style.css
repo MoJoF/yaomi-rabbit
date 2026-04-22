@@ -26,6 +26,11 @@
     box-sizing: border-box;
 }
 
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
 body {
     padding: 10px 17.7vw;
     background: #514261;
