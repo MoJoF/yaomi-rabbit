@@ -24,14 +24,13 @@ const changeTrack = (track) => {
         // Поставить на паузу (снять с паузы), если 
         // ссылка на трек такая же, как и у текущего трека
         if (audio.src === link) {
-            console.log(audio.paused)
             if (audio.paused) {
-                audio.play()
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pausePng
+                audio.play()
             }
             else {
-                audio.pause()
                 select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playPng
+                audio.pause()
             }
         } else {
             audio.pause()
@@ -66,7 +65,7 @@ const renderTracks = (tracks) => {
             <span class="music-title">${track.title}</span>
             <small class="music-author">${track.artist + (track.featured_artist !== null ? " & " + track.featured_artist : "")}</small>
         </div>
-    `
+        `
 
         if (track.cover_url.includes('https')) {
             audioEl.innerHTML += `<div class="right-cont"><img src="${track.cover_url}" class="music-cover">`

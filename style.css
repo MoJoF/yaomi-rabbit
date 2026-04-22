@@ -26,11 +26,6 @@
     box-sizing: border-box;
 }
 
-img {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-}
-
 body {
     padding: 10px 17.7vw;
     background: #514261;
@@ -44,7 +39,7 @@ header>a {
 
 img.logo {
     height: 60px;
-    image-rendering: auto;
+    image-rendering: auto !important;
 }
 
 main {
@@ -99,6 +94,8 @@ img.music-cover {
     height: 100px;
     object-fit: cover;
     border-radius: 10px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 img.song-cover {
@@ -106,6 +103,8 @@ img.song-cover {
     border-radius: 10px;
     max-width: 500px;
     max-height: 500px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 a.detail-link {
