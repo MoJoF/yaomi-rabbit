@@ -59,7 +59,7 @@ main {
 .info-music {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -245,6 +245,7 @@ p.text {
 
     #song {
         flex-direction: column;
+        gap: 10px;
     }
 
     p.text {
