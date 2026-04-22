@@ -37,15 +37,30 @@ header>a {
     gap: 10px;
 }
 
+img.logo {
+    height: 60px;
+}
+
 main {
     margin: 20px 0;
 }
 
-#songs,
-#song {
+#songs {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+#song {
+    display: flex;
+    gap: 30px;
+}
+
+.info-music {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
 .music-item {
@@ -123,15 +138,74 @@ footer>span {
 
 input.range {
     width: 50%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+input.range:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #705987;
+    border-radius: 4px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+    height: 8px;
+    background: #705987;
+    border-radius: 4px;
+}
+
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 30px;
+    background: #a385c2;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 30px;
+    background: #a385c2;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
 }
 
 p.text {
     font-family: Montserrat;
+    font-size: 28px;
+    color: rgb(163, 133, 194);
+    font-weight: bold;
 }
 
 @media (width <=410px) {
     body {
         padding: 10px;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header > a {
+        width: fit-content;
+    }
+
+    img.logo {
+        height: 50px;
     }
 
     .music-item {
@@ -160,5 +234,13 @@ p.text {
 
     input.range {
         width: 70%;
+    }
+
+    #song {
+        flex-direction: column;
+    }
+
+    p.text {
+        font-size: 16px;
     }
 }
