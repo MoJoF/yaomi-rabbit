@@ -1,7 +1,7 @@
 const audio = new Audio(null)
 
-const playSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/play.svg"
-const pauseSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/pause.svg"
+const playPng = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/play-btn.png"
+const pausePng = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/pause-btn.png"
 
 let tracksArr = []
 
@@ -9,7 +9,7 @@ const select = (s, m = false) => m ? document.querySelectorAll(s) : document.que
 
 const changeTrack = (track) => {
     // Везде ставим иконки play
-    select('.play-btn > img', true).forEach(pic => pic.src = playSvg)
+    select('.play-btn > img', true).forEach(pic => pic.src = playPng)
     const audioObj = tracksArr.find(t => t.title === track)
     const link = audioObj.audio_url
     const title = audioObj.title
@@ -27,11 +27,11 @@ const changeTrack = (track) => {
             console.log(audio.paused)
             if (audio.paused) {
                 audio.play()
-                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pauseSvg
+                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = pausePng
             }
             else {
                 audio.pause()
-                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playSvg
+                select('.music-item[data-music-title="' + title + '"] > .play-btn > img').src = playPng
             }
         } else {
             audio.pause()
@@ -42,7 +42,7 @@ const changeTrack = (track) => {
     }
     select('.music-item', true).forEach(musicItem => {
         if (musicItem.getAttribute("data-music-title") === track) {
-            musicItem.querySelector('.play-btn > img').src = pauseSvg
+            musicItem.querySelector('.play-btn > img').src = pausePng
         }
     })
 }
@@ -58,7 +58,7 @@ const renderTracks = (tracks) => {
         audioEl.setAttribute('data-music-title', track.title)
 
         audioEl.innerHTML += `<button class="play-btn" onclick="changeTrack('${track.title}')">
-            <img src="${playSvg}" />
+            <img src="${playPng}" />
         </button>`
 
         audioEl.innerHTML += `
@@ -88,6 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     audio.onended = () => {
-        select('.play-btn > img', true).forEach(pic => pic.src = playSvg)
+        select('.play-btn > img', true).forEach(pic => pic.src = playPng)
     }
 })

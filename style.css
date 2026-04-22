@@ -84,6 +84,8 @@ button.play-btn {
 button.play-btn>img {
     width: 80px;
     height: 80px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 img.music-cover {
@@ -102,7 +104,7 @@ img.song-cover {
 
 a.detail-link {
     font-family: "Agbalumo";
-    color: rgb(163, 133, 194);
+    color: rgb(184, 119, 211);
 }
 
 .texts {
@@ -113,11 +115,11 @@ a.detail-link {
 
 .music-title {
     font-size: 32px;
-    color: rgb(163, 133, 194);
+    color: rgb(184, 119, 211);
 }
 
 .music-author {
-    color: rgba(163, 133, 194, .75);
+    color: rgba(184, 119, 211, .75);
     font-size: 20px;
 }
 
@@ -133,7 +135,7 @@ a.detail-link {
 }
 
 footer>span {
-    color: rgb(163, 133, 194);
+    color: rgb(184, 119, 211);
 }
 
 input.range {
@@ -150,14 +152,14 @@ input.range:focus {
 /* Chrome, Safari, Edge */
 input[type="range"]::-webkit-slider-runnable-track {
     height: 8px;
-    background: #705987;
+    background: #a36cba;
     border-radius: 4px;
 }
 
 /* Firefox */
 input[type="range"]::-moz-range-track {
     height: 8px;
-    background: #705987;
+    background: #a36cba;
     border-radius: 4px;
 }
 
@@ -166,26 +168,31 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 20px;
     width: 30px;
-    background: #a385c2;
+    background: url(https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/thumb.png);
+    background-size: cover;
     border-radius: 3px;
     cursor: pointer;
-    margin-top: -6px;
+    margin-top: -8px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 /* Firefox */
 input[type="range"]::-moz-range-thumb {
     height: 20px;
     width: 30px;
-    background: #a385c2;
+    background: url(https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/thumb.png);
     border-radius: 3px;
     cursor: pointer;
     border: none;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 p.text {
     font-family: Montserrat;
     font-size: 28px;
-    color: rgb(163, 133, 194);
+    color: rgb(184, 119, 211);
     font-weight: bold;
 }
 
@@ -200,7 +207,7 @@ p.text {
         justify-content: center;
     }
 
-    header > a {
+    header>a {
         width: fit-content;
     }
 

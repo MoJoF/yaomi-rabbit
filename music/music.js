@@ -1,7 +1,7 @@
 const select = (s, m = false) => m ? document.querySelectorAll(s) : document.querySelector(s)
 
-const playSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/play.svg"
-const pauseSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/pause.svg"
+const playSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/play-btn.png"
+const pauseSvg = "https://pub-c6c043fab84f4b73a183f59fb6b061f0.r2.dev/yaomi-rabbit/assets/pause-btn.png"
 
 const params = new URLSearchParams(document.location.search)
 const track = params.get("track")
